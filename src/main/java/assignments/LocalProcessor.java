@@ -21,10 +21,8 @@ public class LocalProcessor {
     private Integer valueOfCheap;
     private Scanner informationScanner;
     private List<String> stringArrayList = new LinkedList<>();
-    private StringBuilder processorVersionSB = (processorVersion == null) ? new StringBuilder() :
-            new StringBuilder(processorVersion);
-    private StringBuilder processorSB = (processorName == null) ? new StringBuilder() :
-            new StringBuilder(processorName);
+    private StringBuilder processorVersionSB;
+    private StringBuilder processorSB;
 
     public LocalProcessor() {
     }
@@ -37,6 +35,8 @@ public class LocalProcessor {
         this.valueOfCheap = valueOfCheap;
         this.informationScanner = informationScanner;
         this.stringArrayList = stringArrayList;
+        processorVersionSB = (processorVersion == null) ? new StringBuilder() : new StringBuilder(processorVersion);
+        processorSB = (processorName == null) ? new StringBuilder() : new StringBuilder(processorName);
     }
 
     @ListIteratorAnnotation
