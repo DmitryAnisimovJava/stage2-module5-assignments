@@ -21,8 +21,10 @@ public class LocalProcessor {
     private Integer valueOfCheap;
     private Scanner informationScanner;
     private List<String> stringArrayList = new LinkedList<>();
-    private StringBuilder processorSB = new StringBuilder(processorName);
-    private StringBuilder processorVersionSB = new StringBuilder(processorVersion);
+    private StringBuilder processorVersionSB = (processorVersion == null) ? new StringBuilder() :
+            new StringBuilder(processorVersion);
+    private StringBuilder processorSB = (processorName == null) ? new StringBuilder() :
+            new StringBuilder(processorName);
 
     public LocalProcessor() {
     }
@@ -48,7 +50,7 @@ public class LocalProcessor {
     }
 
     @FullNameProcessorGeneratorAnnotation
-    public String fullNameProcessorGenerator(List<String> stringList) {;
+    public String fullNameProcessorGenerator(List<String> stringList) {
         for (String element : stringList) {
             processorSB.append(element);
         }
